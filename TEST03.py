@@ -20,13 +20,13 @@ else:
 # Use case 2: Get the base experience, 
 
 # Use case 3: Get the name and URL of the first 20 Pokemon that are of the Fire type
-def Pokemon_type 
+def Pokemon_type ():
 response = requests.get("https://pokeapi.co/api/v2/type/fire")
 if response.status_code == 200:
     data = response.json()
     Fire_pokemon =[]
     print("Pokemon Fire Type")
-    for pokemon in data['pokemon'][:20]:
+    for pokemon in data['result'][:20]:
         Fire_pokemon.append([pokemon['pokemon']['name'],pokemon['pokemon']['url']])
         #print(f" name {pokemon['pokemon']['name']} url {pokemon['pokemon']['url']}")
     print("Pokemon that are of the Fire type:",Fire_pokemon)
